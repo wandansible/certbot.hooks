@@ -1,0 +1,3 @@
+---
+certbot_pre_hook: ""
+certbot_post_hook: ""
