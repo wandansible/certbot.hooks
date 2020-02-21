@@ -1,3 +1,3 @@
 ---
-certbot_pre_hook: ""
-certbot_post_hook: ""
+certbot_pre_hooks: []
+certbot_post_hooks: []
