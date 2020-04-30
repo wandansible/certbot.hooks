@@ -1,12 +1,10 @@
 ---
-- name: Create certbot systemd drop in directory
-  file:
-    path: "/etc/systemd/system/certbot.service.d"
-    state: directory
-    mode: '0755'
-
-- name: Create certbot systemd drop in
+- name: Create hook scripts
   template:
-    src: "templates/systemd/hooks.conf"
-    dest: "/etc/systemd/system/certbot.service.d/hooks.conf"
-  notify: systemd daemon-reload
+    src: "templates/hook.sh"
+    dest: "/etc/letsencrypt/renewal-hooks/{{ item }}/hook.sh"
+    mode: "u=rwx,g=rx,o=rx"
+  with_items:
+    - "pre"
+    - "post"
+    - "deploy"
