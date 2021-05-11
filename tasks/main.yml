@@ -1,4 +1,16 @@
 ---
+- name: Ensure letsencrypt hook directories exist
+  ansible.builtin.file:
+    path: /etc/letsencrypt/renewal-hooks/{{ item }}
+    owner: root
+    group: root
+    mode: u=rwx,g=rx,o=rx
+    state: directory
+  loop:
+    - "pre"
+    - "post"
+    - "deploy"
+    
 - name: Create hook scripts
   template:
     src: "templates/hook.sh"
