@@ -4,7 +4,7 @@
 set -euo pipefail
 {% if item == 'deploy' %}
 
-for domain in $RENEWED_DOMAINS; do
+for domain in ${RENEWED_DOMAINS}; do
     case "${domain}" in
 {% for domain in certbot_certs %}
 {% if domain['deploy-hook'] is defined %}
