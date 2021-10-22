@@ -10,7 +10,7 @@
     - "pre"
     - "post"
     - "deploy"
-    
+
 - name: Create hook scripts
   template:
     src: "templates/hook.sh"
