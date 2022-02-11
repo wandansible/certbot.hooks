@@ -12,7 +12,7 @@
     - "deploy"
 
 - name: Create hook scripts
-  template:
+  ansible.builtin.template:
     src: "templates/hook.sh"
     dest: "/etc/letsencrypt/renewal-hooks/{{ item }}/hook.sh"
     mode: "u=rwx,g=rx,o=rx"
