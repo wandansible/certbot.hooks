@@ -1,0 +1,9 @@
+---
+- name: Converge
+  hosts: all
+  tasks:
+    - name: "Include wandansible.certbot.hooks"
+      ansible.builtin.include_role:
+        name: "wandansible.certbot.hooks"
+      vars:
+        certbot_auto_renew_user: root
