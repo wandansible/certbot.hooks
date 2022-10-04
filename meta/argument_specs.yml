@@ -1,0 +1,21 @@
+---
+argument_specs:
+  main:
+    short_description: Add certbot hook scripts
+    description: |
+      This role builds on top of the geerlingguy.certbot role to add
+      additional functionality for adding hook scripts.
+
+      Customizable deploy hook scripts can be configured per certificate
+      by setting the deploy-hook key which is added to the certbot_certs dict.
+
+      Customizable pre/post hook scripts can be configured via the
+      new certbot_pre_hook and certbot_post_hook variables.
+    options:
+      certbot_pre_hook:
+        description: Contents for the pre hook script
+        type: str
+
+      certbot_post_hook:
+        description: Contents for the post hook script
+        type: str
