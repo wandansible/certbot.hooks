@@ -1,0 +1,8 @@
+---
+- name: Prepare
+  hosts: all
+  tasks:
+    - name: "Install cron"
+      ansible.builtin.apt:
+        pkg:
+          - "cron"
