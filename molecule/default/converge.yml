@@ -7,3 +7,4 @@
         name: "wandansible.certbot.hooks"
       vars:
         certbot_auto_renew_user: root
+        certbot_certs: []
